@@ -11,7 +11,7 @@
 
         <version.maven-checkstyle>3.4.0</version.maven-checkstyle>
         <version.maven-compiler>3.13.0</version.maven-compiler>
-        <version.maven-shade>3.6.0</version.maven-shade>
+        <version.maven-shade>3.6.2</version.maven-shade>
         <version.maven-surefire>3.3.0</version.maven-surefire>
         <version.maven-release>3.1.1</version.maven-release>
         <version.maven-javadoc>3.11.2</version.maven-javadoc>
@@ -31,6 +31,10 @@
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>tcoded-releases</id>
+            <url>https://repo.tcoded.com/releases</url>
         </repository>
     </repositories>
 
@@ -74,6 +78,13 @@
             <groupId>com.jeff-media</groupId>
             <artifactId>armor-equip-event</artifactId>
             <version>${version.armor-equip-event}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.tcoded</groupId>
+            <artifactId>FoliaLib</artifactId>
+            <version>0.5.1</version>
             <scope>compile</scope>
         </dependency>
 
@@ -139,6 +150,10 @@
                         <relocation>
                             <pattern>com.jeff_media.armorequipevent</pattern>
                             <shadedPattern>nl.pim16aap2.armoredElytra.lib.armorequipevent</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>com.tcoded.folialib</pattern>
+                            <shadedPattern>nl.pim16aap2.armoredElytra.lib.folialib</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>

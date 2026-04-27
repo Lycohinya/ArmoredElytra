@@ -10,7 +10,6 @@ import nl.pim16aap2.armoredElytra.util.ArmorTier;
 import nl.pim16aap2.armoredElytra.util.RemappedEnchantment;
 import nl.pim16aap2.armoredElytra.util.Util;
 import nl.pim16aap2.armoredElytra.util.messages.Message;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -145,7 +144,7 @@ public class EventHandlers implements Listener
 
         // Apply it again a tick later, so we can override the durability of the armored elytra without
         // interfering with the player XP change event that depends on the success of this one.
-        Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, () ->
+        this.plugin.getFoliaLib().getScheduler().runAtEntityLater(e.getPlayer(), () ->
             durabilityManager.setDurability(e.getItem(), newDurability, armorTier), 1);
     }
 
