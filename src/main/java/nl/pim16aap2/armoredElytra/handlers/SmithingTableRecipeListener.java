@@ -192,10 +192,8 @@ class SmithingTableRecipeListener extends AbstractSmithingTableListener implemen
         if (isRecipeResultPlaceholder(result))
         {
             plugin.myLogger(
-                Level.SEVERE,
-                "Smithing Table: " +
-                    "Attempted to retrieve a placeholder result! Result: " + result +
-                    ", input: " + input
+                Level.FINE,
+                "Smithing Table: Attempted to verify a placeholder result! Result: " + result + ", input: " + input
             );
             inventory.setItem(SMITHING_TABLE_RESULT_SLOT, null);
         }

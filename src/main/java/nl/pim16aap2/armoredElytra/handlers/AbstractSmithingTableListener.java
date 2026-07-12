@@ -125,8 +125,9 @@ public abstract class AbstractSmithingTableListener extends ArmoredElytraHandler
         if (isRecipeResultPlaceholder(result))
         {
             plugin.myLogger(
-                Level.SEVERE,
-                "Smithing Table: Attempted to retrieve a placeholder result! Result: " + result + ", input: " + input);
+                Level.FINE,
+                "Smithing Table: Attempted to retrieve a placeholder result! Result: " + result + ", input: " + input
+            );
             return;
         }
 
