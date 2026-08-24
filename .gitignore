@@ -31,6 +31,7 @@ hs_err_pid*
 .idea/
 .project
 .settings/
+.agents
 ArmoredElytra (1).iml
 NBTChange
 dependency-reduced-pom.xml
