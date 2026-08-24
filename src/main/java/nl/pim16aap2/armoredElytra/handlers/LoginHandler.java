@@ -24,7 +24,7 @@ public class LoginHandler implements Listener
         Player player = event.getPlayer();
         if (player.hasPermission("armoredElytra.admin"))
             // Slight delay so the player actually receives the message;
-            plugin.getFoliaLib().getScheduler().runLater(() ->
+            plugin.getFoliaLib().getScheduler().runAtEntityLater(player, () ->
                 plugin.messagePlayer(player, ChatColor.AQUA, message), 10L);
     }
 }

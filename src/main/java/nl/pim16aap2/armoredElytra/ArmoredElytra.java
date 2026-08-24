@@ -185,7 +185,11 @@ public class ArmoredElytra extends JavaPlugin implements Listener
     // Send a message to a player in a specific color.
     public void messagePlayer(HumanEntity player, ChatColor color, String str)
     {
-        player.sendMessage(color + str);
+        final String formatted = color + Messages.translateColorCodes(str);
+        if (foliaLib != null && foliaLib.isFolia())
+            foliaLib.getScheduler().runAtEntity(player, task -> player.sendMessage(formatted));
+        else
+            player.sendMessage(formatted);
     }
 
     // Send a message to a player.
@@ -245,7 +249,12 @@ public class ArmoredElytra extends JavaPlugin implements Listener
     public void giveArmoredElytraToPlayer(HumanEntity player, ItemStack item)
     {
         if (item != null)
-            player.getInventory().addItem(item);
+        {
+            if (foliaLib != null && foliaLib.isFolia())
+                foliaLib.getScheduler().runAtEntity(player, task -> player.getInventory().addItem(item));
+            else
+                player.getInventory().addItem(item);
+        }
     }
 
     public UpdateManager getUpdateManager()

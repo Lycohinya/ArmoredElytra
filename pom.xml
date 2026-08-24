@@ -19,7 +19,7 @@
         <version.maven-gpg>3.2.8</version.maven-gpg>
 
         <version.armor-equip-event>1.0.3</version.armor-equip-event>
-        <version.bstats>3.0.2</version.bstats>
+        <version.bstats>3.1.0</version.bstats>
         <version.checkstyle>10.17.0</version.checkstyle>
         <version.junit>5.13.4</version.junit>
         <version.mockito>5.17.0</version.mockito>

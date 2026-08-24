@@ -23,11 +23,12 @@ import java.util.function.BiConsumer;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.logging.Level;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Messages
 {
-    private static final String DEFAULT_FILENAME = "en_US.txt";
+    private static final String DEFAULT_FILENAME = "zh_TW.txt";
 
     /**
      * The map of all messages.
@@ -44,6 +45,7 @@ public class Messages
     private static final Pattern matchDots = Pattern.compile("\\.");
     private static final Pattern matchNewLines = Pattern.compile("\\\\n");
     private static final Pattern matchColorCodes = Pattern.compile("&((?i)[0-9a-fk-or])");
+    private static final Pattern matchHexCodes = Pattern.compile("&#([0-9a-fA-F]{6})");
 
     public Messages(final ArmoredElytra plugin)
     {
@@ -62,6 +64,29 @@ public class Messages
             textFile = Path.of(plugin.getDataFolder().toURI()).resolve(DEFAULT_FILENAME);
         }
         populateMessageMap();
+    }
+
+    /**
+     * Translates standard alternate color codes (&a, &b) and hex color codes (&#RRGGBB).
+     */
+    public static String translateColorCodes(String text)
+    {
+        if (text == null)
+            return "";
+
+        Matcher hexMatcher = matchHexCodes.matcher(text);
+        StringBuilder hexBuffer = new StringBuilder();
+        while (hexMatcher.find())
+        {
+            String hex = hexMatcher.group(1);
+            StringBuilder replacement = new StringBuilder("§x");
+            for (char c : hex.toCharArray())
+                replacement.append('§').append(c);
+            hexMatcher.appendReplacement(hexBuffer, replacement.toString());
+        }
+        hexMatcher.appendTail(hexBuffer);
+
+        return ChatColor.translateAlternateColorCodes('&', hexBuffer.toString());
     }
 
     /**
@@ -87,12 +112,15 @@ public class Messages
                 continue;
 
             String[] parts = sCurrentLine.split("=", 2);
+            if (parts.length < 2)
+                continue;
+
             try
             {
                 final Message msg = Message.valueOf(matchDots.matcher(parts[0]).replaceAll("_").toUpperCase());
-                final String value = matchNewLines.matcher(matchColorCodes.matcher(parts[1]).replaceAll("\u00A7$1"))
-                                                  .replaceAll("\n");
-                action.accept(msg, value);
+                String formatted = translateColorCodes(parts[1]);
+                formatted = matchNewLines.matcher(formatted).replaceAll("\n");
+                action.accept(msg, formatted);
             }
             catch (IllegalArgumentException e)
             {
@@ -115,7 +143,10 @@ public class Messages
      */
     private void addMessage(final Message message, final String value)
     {
-        messageMap.put(message, message.getDefaultColor() + ChatColor.translateAlternateColorCodes('&', value));
+        String colored = value;
+        if (!colored.startsWith("\u00A7") && message.getDefaultColor() != null)
+            colored = message.getDefaultColor() + colored;
+        messageMap.put(message, colored);
     }
 
     /**

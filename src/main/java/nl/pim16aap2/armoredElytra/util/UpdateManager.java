@@ -62,9 +62,9 @@ public final class UpdateManager
         {
             // Run the UpdateChecker regularly.
             if (updateRunner == null)
-                // Run immediately, then every 12 hours.
+                // Run on next tick (1L), then every 12 hours.
                 updateRunner = plugin.getFoliaLib().getScheduler().runTimer(
-                    this::checkForUpdates, 0L, 864000L);
+                    this::checkForUpdates, 1L, 864000L);
         }
         else
         {

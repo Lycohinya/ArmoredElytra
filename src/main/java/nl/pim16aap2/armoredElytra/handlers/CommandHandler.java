@@ -73,7 +73,7 @@ public class CommandHandler implements CommandExecutor
                         receiver = Bukkit.getPlayer(args[0]);
                         if (receiver == null)
                         {
-                            plugin.messagePlayer(player, ChatColor.RED, "Player \"" + args[0] + "\" not found!");
+                            plugin.messagePlayer(player, "&8【&#FFB7C5彼岸羽裝&8】 &#E27D60找不到玩家 \"" + args[0] + "\"！");
                             return true;
                         }
                         tier = args[1];
@@ -104,7 +104,7 @@ public class CommandHandler implements CommandExecutor
         {
             if (plugin.getConfigLoader().uninstallMode())
             {
-                plugin.myLogger(Level.INFO, "Plugin in uninstall mode! New Armored Elytras are not allowed!");
+                plugin.myLogger(Level.INFO, "插件正處於解除安裝模式，不允許製作與給予羽裝。");
                 return true;
             }
 
@@ -129,11 +129,11 @@ public class CommandHandler implements CommandExecutor
 
                     plugin.elytraReceivedMessage(player, armorTier);
                     plugin.giveArmoredElytraToPlayer(player, armoredElytraBuilder.newArmoredElytra(null, armorTier));
-                    plugin.myLogger(Level.INFO, ("Giving an armored elytra of the " + ArmorTier.getArmor(armorTier) +
-                        " armor tier to player " + player.getName()));
+                    plugin.myLogger(Level.INFO, ("已將 " + ArmorTier.getArmor(armorTier) +
+                        " 羽裝給予玩家 " + player.getName()));
                     return true;
                 }
-                plugin.myLogger(Level.INFO, ("Player " + args[1] + " not found!"));
+                plugin.myLogger(Level.INFO, ("找不到玩家 " + args[0] + "！"));
                 return true;
             }
         }

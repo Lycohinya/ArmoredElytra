@@ -231,7 +231,7 @@ public class ConfigLoader
         allowStats = addNewConfigOption(config, "allowStats", true, bStatsComment);
         enableDebug = addNewConfigOption(config, "enableDebug", false, debugComment);
         uninstallMode = addNewConfigOption(config, "uninstallMode", false, uninstallComment);
-        languageFile = addNewConfigOption(config, "languageFile", "en_US", languageFileComment);
+        languageFile = addNewConfigOption(config, "languageFile", "zh_TW", languageFileComment);
         bypassWearPerm = addNewConfigOption(config, "bypassWearPermissions", true, permissionsComment);
         bypassCraftPerm = addNewConfigOption(config, "bypassCraftPermissions", true, null);
 

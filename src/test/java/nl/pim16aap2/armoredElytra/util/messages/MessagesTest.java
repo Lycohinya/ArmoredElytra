@@ -30,4 +30,12 @@ class MessagesTest
             Messages.insertVariable(input, "%VAR1%", var1Value)
         );
     }
+
+    @Test
+    void testTranslateColorCodes()
+    {
+        final String input = "&#FFB7C5【裝甲鞘翅】&a測試成功";
+        final String expected = "§x§F§F§B§7§C§5【裝甲鞘翅】§a測試成功";
+        assertEquals(expected, Messages.translateColorCodes(input));
+    }
 }

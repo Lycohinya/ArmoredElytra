@@ -7,44 +7,50 @@ api-version: 1.16
 folia-supported: true
 commands:
   ArmoredElytra:
-    description: Give an armored elytra of the specified tier.
-    usage: /ArmoredElytra [receiver] <tier>
+    description: 給予指定階級的羽裝。
+    usage: /ArmoredElytra [接收者] <階級>
 permissions:
   armoredelytra.wear.leather:
-    description: Allow the player to wear leather tier armored elytras.
+    description: 允許玩家穿戴素革羽裝。
   armoredelytra.wear.gold:
-    description: Allow the player to wear gold tier armored elytras.
+    description: 允許玩家穿戴山吹金羽裝。
   armoredelytra.wear.chain:
-    description: Allow the player to wear chain tier armored elytras.
+    description: 允許玩家穿戴銀鎖羽裝。
   armoredelytra.wear.iron:
-    description: Allow the player to wear iron tier armored elytras.
+    description: 允許玩家穿戴玉鋼羽裝。
   armoredelytra.wear.diamond:
-    description: Allow the player to wear diamond tier armored elytras.
+    description: 允許玩家穿戴青金剛羽裝。
   armoredelytra.wear.netherite:
-    description: Allow the player to wear netherite tier armored elytras.
+    description: 允許玩家穿戴彼岸獄羽。
+  armoredelytra.wear.copper:
+    description: 允許玩家穿戴赤銅羽裝。
   armoredelytra.craft.leather:
-    description: Allow the player to craft leather tier armored elytras.
+    description: 允許玩家鍛造素革羽裝。
   armoredelytra.craft.gold:
-    description: Allow the player to craft gold tier armored elytras.
+    description: 允許玩家鍛造山吹金羽裝。
   armoredelytra.craft.chain:
-    description: Allow the player to craft chain tier armored elytras.
+    description: 允許玩家鍛造銀鎖羽裝。
   armoredelytra.craft.iron:
-    description: Allow the player to craft iron tier armored elytras.
+    description: 允許玩家鍛造玉鋼羽裝。
   armoredelytra.craft.diamond:
-    description: Allow the player to craft diamond tier armored elytras.
+    description: 允許玩家鍛造青金剛羽裝。
   armoredelytra.craft.netherite:
-    description: Allow the player to craft netherite tier armored elytras.
+    description: 允許玩家鍛造彼岸獄羽。
+  armoredelytra.craft.copper:
+    description: 允許玩家鍛造赤銅羽裝。
   armoredelytra.give.leather:
-    description: Allow the player to spawn in leather tier armored elytras.
+    description: 允許給予玩家素革羽裝。
   armoredelytra.give.gold:
-    description: Allow the player to spawn in gold tier armored elytras.
+    description: 允許給予玩家山吹金羽裝。
   armoredelytra.give.chain:
-    description: Allow the player to spawn in chain tier armored elytras.
+    description: 允許給予玩家銀鎖羽裝。
   armoredelytra.give.iron:
-    description: Allow the player to spawn in iron tier armored elytras.
+    description: 允許給予玩家玉鋼羽裝。
   armoredelytra.give.diamond:
-    description: Allow the player to spawn in diamond tier armored elytras.
+    description: 允許給予玩家青金剛羽裝。
   armoredelytra.give.netherite:
-    description: Allow the player to spawn in netherite tier armored elytras.
+    description: 允許給予玩家彼岸獄羽。
+  armoredelytra.give.copper:
+    description: 允許給予玩家赤銅羽裝。
   armoredElytra.admin:
-    description: Receive a message if this plugin is out of date when joining the server.
+    description: 登入伺服器時接收插件更新提示。
