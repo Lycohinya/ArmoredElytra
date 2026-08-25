@@ -1,33 +1,37 @@
-# 此檔案包含本插件所使用的所有字句與提示訊息。
-# 您可以在 config.yml 中調整使用的語言檔。
-# 格式為 "key=value"（不包含引號）。您可以修改數值內容，但請勿修改鍵名（Key）。
-# 支援標準顏色代碼（&a、&b、&f 等）以及十六進制 HEX 和風色碼（&#RRGGBB）。
+# 此檔案包含本插件所有玩家可見的字句。
+# 要換語言檔請改 config.yml 的 languageFile。
+# 格式是 "key=value"(不含引號)。值可以改,鍵名不要動。
+# 支援標準色碼(&a、&b、&f)與十六進位色碼(&#RRGGBB)。
+#
+# 命名規則(docs/CONTENT_NAMING.md):材質沿用原版譯名,鞘翅+護甲的複合物叫「鎧翅」,
+# 一層命名就好,不要再往上疊修飾語;玩家可見文字不加句尾句號。
 
-# 裝甲羽翼階級名稱（融入 Lycohinya 自然魔法與和風甲冑命名美學）
-TIER.Leather=&#D2A374風行・素革甲羽
-TIER.Gold=&#F1C40F月華・山吹金羽
-TIER.Chain=&#95A5A6霧鎖・銀鎖陣羽
-TIER.Iron=&#E0E6ED深脈・玉鋼鎧羽
-TIER.Diamond=&#70A1D7星屑・青金剛翼
-TIER.Netherite=&#A349A4彼岸・幽冥獄羽
-TIER.Copper=&#E07A5F晨露・赤銅甲羽
+# 鎧翅名稱(道具顯示名就是這一行)
+TIER.Leather=&#C68642皮革鎧翅
+TIER.Gold=&#F1C40F金鎧翅
+TIER.Chain=&#A9B7C6鎖鏈鎧翅
+TIER.Iron=&#E0E6ED鐵鎧翅
+TIER.Diamond=&#4AEDD9鑽石鎧翅
+TIER.Netherite=&#8A6F6F獄髓鎧翅
+TIER.Copper=&#E07A5F銅鎧翅
 
-TIER.SHORT.Leather=&#D2A374素革
-TIER.SHORT.Gold=&#F1C40F山吹金
-TIER.SHORT.Chain=&#95A5A6銀鎖
-TIER.SHORT.Iron=&#E0E6ED玉鋼
-TIER.SHORT.Diamond=&#70A1D7青金剛
-TIER.SHORT.Netherite=&#A349A4彼岸獄髓
-TIER.SHORT.Copper=&#E07A5F赤銅
+# 短名(只在句子裡代稱材質時用)
+TIER.SHORT.Leather=&#C68642皮革
+TIER.SHORT.Gold=&#F1C40F金
+TIER.SHORT.Chain=&#A9B7C6鎖鏈
+TIER.SHORT.Iron=&#E0E6ED鐵
+TIER.SHORT.Diamond=&#4AEDD9鑽石
+TIER.SHORT.Netherite=&#8A6F6F獄髓
+TIER.SHORT.Copper=&#E07A5F銅
 
-MESSAGES.UninstallMode=&8【&#FFB7C5彼岸羽裝&8】 &#E8A87C目前處於解除安裝模式，暫停鍛造新的羽裝
-MESSAGES.UnsupportedTier=&8【&#FFB7C5彼岸羽裝&8】 &#E27D60不支援的材質階級！可選材質：素革、山吹金、銀鎖、玉鋼、青金剛、彼岸獄髓、赤銅
-MESSAGES.RepairNeeded=&8【&#FFB7C5彼岸羽裝&8】 &#E27D60此羽裝耐久已耗盡！請先在鐵砧上修復重鑄
+MESSAGES.UninstallMode=&#FFB7C5❀ &#E8A87C現在是解除安裝模式,暫時做不出新的鎧翅
+MESSAGES.UnsupportedTier=&#FFB7C5❀ &#E27D60沒有這種材質,可以選:皮革、金、鎖鏈、鐵、鑽石、獄髓、銅
+MESSAGES.RepairNeeded=&#FFB7C5❀ &#E27D60這件鎧翅耐久見底了,先拿去鐵砧修好才穿得上
 
-# 下列訊息支援以下變數替換：
-# - %ARMOR_TIER%（對應 TIER.X，例如：TIER.Leather）
-# - %ARMOR_TIER_SHORT%（對應 TIER.SHORT.X，例如：TIER.SHORT.Leather）
-MESSAGES.Lore=&7✦ &#FFB7C5甲冑階級&7: %ARMOR_TIER_SHORT% &7✦\n&8└ &#A8DADC兼備空靈滑翔與 %ARMOR_TIER_SHORT% &#A8DADC防護之力的羽裝
-MESSAGES.NoGivePermission=&8【&#FFB7C5彼岸羽裝&8】 &#E27D60你沒有賜予 %ARMOR_TIER% &#E27D60的權限
-MESSAGES.UsageDenied=&8【&#FFB7C5彼岸羽裝&8】 &#E27D60你尚未獲得裝備 %ARMOR_TIER% &#E27D60的資格！
-MESSAGES.ElytraReceived=&8【&#FFB7C5彼岸羽裝&8】 &#85DCB0已將一件 %ARMOR_TIER% &#85DCB0放入你的背包
+# 下列訊息支援這些變數:
+# - %ARMOR_TIER%(對應 TIER.X,例如 TIER.Leather)
+# - %ARMOR_TIER_SHORT%(對應 TIER.SHORT.X,例如 TIER.SHORT.Leather)
+MESSAGES.Lore=&7滑翔的同時保有 %ARMOR_TIER_SHORT% &7護甲的防護
+MESSAGES.NoGivePermission=&#FFB7C5❀ &#E27D60你沒有發放 %ARMOR_TIER% &#E27D60的權限
+MESSAGES.UsageDenied=&#FFB7C5❀ &#E27D60你還不能穿 %ARMOR_TIER%
+MESSAGES.ElytraReceived=&#FFB7C5❀ &#85DCB0%ARMOR_TIER% &#85DCB0已經放進你的背包

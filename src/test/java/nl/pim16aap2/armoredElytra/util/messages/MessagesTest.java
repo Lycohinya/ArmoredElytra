@@ -34,8 +34,8 @@ class MessagesTest
     @Test
     void testTranslateColorCodes()
     {
-        final String input = "&#FFB7C5【裝甲鞘翅】&a測試成功";
-        final String expected = "§x§F§F§B§7§C§5【裝甲鞘翅】§a測試成功";
+        final String input = "&#FFB7C5❀ &a鎧翅測試成功";
+        final String expected = "§x§F§F§B§7§C§5❀ §a鎧翅測試成功";
         assertEquals(expected, Messages.translateColorCodes(input));
     }
 }

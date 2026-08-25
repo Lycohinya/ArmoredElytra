@@ -7,50 +7,50 @@ api-version: 1.16
 folia-supported: true
 commands:
   ArmoredElytra:
-    description: 給予指定階級的羽裝。
-    usage: /ArmoredElytra [接收者] <階級>
+    description: 給予指定材質的鎧翅
+    usage: /ArmoredElytra [接收者] <材質>
 permissions:
   armoredelytra.wear.leather:
-    description: 允許玩家穿戴素革羽裝。
+    description: 允許玩家穿戴皮革鎧翅
   armoredelytra.wear.gold:
-    description: 允許玩家穿戴山吹金羽裝。
+    description: 允許玩家穿戴金鎧翅
   armoredelytra.wear.chain:
-    description: 允許玩家穿戴銀鎖羽裝。
+    description: 允許玩家穿戴鎖鏈鎧翅
   armoredelytra.wear.iron:
-    description: 允許玩家穿戴玉鋼羽裝。
+    description: 允許玩家穿戴鐵鎧翅
   armoredelytra.wear.diamond:
-    description: 允許玩家穿戴青金剛羽裝。
+    description: 允許玩家穿戴鑽石鎧翅
   armoredelytra.wear.netherite:
-    description: 允許玩家穿戴彼岸獄羽。
+    description: 允許玩家穿戴獄髓鎧翅
   armoredelytra.wear.copper:
-    description: 允許玩家穿戴赤銅羽裝。
+    description: 允許玩家穿戴銅鎧翅
   armoredelytra.craft.leather:
-    description: 允許玩家鍛造素革羽裝。
+    description: 允許玩家製作皮革鎧翅
   armoredelytra.craft.gold:
-    description: 允許玩家鍛造山吹金羽裝。
+    description: 允許玩家製作金鎧翅
   armoredelytra.craft.chain:
-    description: 允許玩家鍛造銀鎖羽裝。
+    description: 允許玩家製作鎖鏈鎧翅
   armoredelytra.craft.iron:
-    description: 允許玩家鍛造玉鋼羽裝。
+    description: 允許玩家製作鐵鎧翅
   armoredelytra.craft.diamond:
-    description: 允許玩家鍛造青金剛羽裝。
+    description: 允許玩家製作鑽石鎧翅
   armoredelytra.craft.netherite:
-    description: 允許玩家鍛造彼岸獄羽。
+    description: 允許玩家製作獄髓鎧翅
   armoredelytra.craft.copper:
-    description: 允許玩家鍛造赤銅羽裝。
+    description: 允許玩家製作銅鎧翅
   armoredelytra.give.leather:
-    description: 允許給予玩家素革羽裝。
+    description: 允許發放皮革鎧翅給玩家
   armoredelytra.give.gold:
-    description: 允許給予玩家山吹金羽裝。
+    description: 允許發放金鎧翅給玩家
   armoredelytra.give.chain:
-    description: 允許給予玩家銀鎖羽裝。
+    description: 允許發放鎖鏈鎧翅給玩家
   armoredelytra.give.iron:
-    description: 允許給予玩家玉鋼羽裝。
+    description: 允許發放鐵鎧翅給玩家
   armoredelytra.give.diamond:
-    description: 允許給予玩家青金剛羽裝。
+    description: 允許發放鑽石鎧翅給玩家
   armoredelytra.give.netherite:
-    description: 允許給予玩家彼岸獄羽。
+    description: 允許發放獄髓鎧翅給玩家
   armoredelytra.give.copper:
-    description: 允許給予玩家赤銅羽裝。
+    description: 允許發放銅鎧翅給玩家
   armoredElytra.admin:
-    description: 登入伺服器時接收插件更新提示。
+    description: 登入伺服器時接收插件更新提示
