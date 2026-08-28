@@ -138,7 +138,7 @@ public record ElytraInput(
         final NameUpdate nameUpdate =
             NameUpdate.fromInput(config, inputItems.elytra(), nameUpdateArmorTier, inventory.getRenameText());
 
-        @Nullable InputAction inputAction = null;
+        InputAction inputAction;
 
         final boolean elytraIsArmored = oldArmorTier != ArmorTier.NONE;
 
@@ -174,6 +174,11 @@ public record ElytraInput(
             inputAction = InputAction.IGNORE;
         }
 
+        else if (!isHandledArmoredAnvilMaterial(oldArmorTier, inputItems.combinedWithType()))
+        {
+            inputAction = InputAction.IGNORE;
+        }
+
         else if (inputItems.combinedWithType() == Material.ENCHANTED_BOOK)
         {
             inputAction = config.allowAddingEnchantments() ? InputAction.ENCHANT : InputAction.BLOCK;
@@ -195,22 +200,9 @@ public record ElytraInput(
             inputAction = InputAction.BLOCK;
         }
 
-        if (inputAction == null)
-            throw new IllegalStateException(String.format(
-                """
-                Could not determine the input action for the input:
-                Input items: %s
-                Template: %s
-                NameUpdate: %s
-                Old armor tier: %s
-                New armor tier: %s
-                """,
-                inputItems,
-                null,
-                nameUpdate,
-                oldArmorTier,
-                newArmorTier
-            ));
+        else
+            throw new IllegalStateException("Unhandled armored elytra anvil material: " +
+                                                inputItems.combinedWithType());
 
         return new ElytraInput(
             inputItems,
@@ -220,6 +212,15 @@ public record ElytraInput(
             oldArmorTier,
             newArmorTier
         );
+    }
+
+    static boolean isHandledArmoredAnvilMaterial(ArmorTier oldArmorTier, @Nullable Material material)
+    {
+        return material == Material.ENCHANTED_BOOK ||
+            material == ArmorTier.getRepairItem(oldArmorTier) ||
+            oldArmorTier != ArmorTier.LEATHER && material == Material.ELYTRA ||
+            material == Material.LEATHER ||
+            material == Material.PHANTOM_MEMBRANE;
     }
 
     /**
